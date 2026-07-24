@@ -1,0 +1,10 @@
+﻿namespace Base.Domain.Repositories.Common;
+
+public interface IGenericRepository<TModel> where TModel : class
+{
+    public Task<TModel> CreateAsync(TModel model); 
+    public Task<TModel> UpdateAsync(TModel model); 
+    public Task<bool>ExistsByIdAsync(int id);
+    public Task<bool>DeleteHardAsync(int id);
+    public Task<TModel?> GetByIdAsync(int id);
+}

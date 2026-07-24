@@ -1,0 +1,16 @@
+C:\Test\base_1\Base.Aplication\bin\Debug\net8.0\Base.Aplication.deps.json
+C:\Test\base_1\Base.Aplication\bin\Debug\net8.0\Base.Aplication.dll
+C:\Test\base_1\Base.Aplication\bin\Debug\net8.0\Base.Aplication.pdb
+C:\Test\base_1\Base.Aplication\bin\Debug\net8.0\Base.Domain.dll
+C:\Test\base_1\Base.Aplication\bin\Debug\net8.0\Base.Domain.pdb
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.csproj.AssemblyReference.cache
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.AssemblyInfoInputs.cache
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.AssemblyInfo.cs
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.csproj.CoreCompileInputs.cache
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Apl.0E83B834.Up2Date
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.dll
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\refint\Base.Aplication.dll
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.pdb
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\ref\Base.Aplication.dll
+C:\Test\base_1\Base.Aplication\obj\Debug\net8.0\Base.Aplication.sourcelink.json
