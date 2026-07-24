@@ -5,6 +5,7 @@ using Base.Domain.Repositories.Authentication;
 using Base.Infrastructure.Database.EntityFramework.Context;
 using Base.Infrastructure.Database.EntityFramework.Repositories;
 using Base.Infrastructure.Database.EntityFramework.Repositories.Authentication;
+using Base.Infrastructure.Database.EntityFramework.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,12 +50,15 @@ public static class BaseDi
     //     public void NotifyNewCandidate(DateTime scheduledAtUtc) {}
     // }
     
-    public static IServiceCollection RegisterServices(this IServiceCollection collection)
+    public static IServiceCollection RegisterServices(this IServiceCollection collection, IConfiguration configuration)
     {
         collection.AddTransient<TestTableService>();
         collection.AddTransient<AuthService>();
         collection.AddTransient<IPasswordHasher, PasswordHasher>();
         collection.AddTransient<ITokenService, JwtTokenService>();
+        
+        collection.Configure<JwtSettings>(configuration.GetSection("Jwt"));
+
         return collection;
     }
     public static IServiceCollection RegisterRepositories(this IServiceCollection collection)

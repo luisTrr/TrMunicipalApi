@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.RegisterDataBase(builder.Configuration)
     .RegisterLibraries()
     .RegisterProviders(builder.Configuration)
-    .RegisterServices()
+    .RegisterServices(builder.Configuration)
     .RegisterRepositories();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
