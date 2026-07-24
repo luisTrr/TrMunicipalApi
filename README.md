@@ -92,3 +92,17 @@ app.MapGet("/users", async (IUserService service) =>
 {
     return await service.GetAllAsync();
 });
+```
+
+# 🗄️ DataBase (Base de datos)
+
+Crear un archivo secreto en el proyecto infrastruture y poner la conexion a su base de datos varia la conexion tiene que ser igual al del archivo appsettings.json luego actualizar la base de datos utilizando entityFramework.
+
+### Ejemplo:
+
+```csharp
+{
+  "ConnectionStrings": {
+    "RemoteConnection": "Server=localhost\\SQLEXPRESS;Database=TestDB;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
