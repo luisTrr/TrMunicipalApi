@@ -1,6 +1,8 @@
 ﻿using Base.Infrastructure.Database.EntityFramework.Context.Authentication;
+using Base.Infrastructure.Database.EntityFramework.Context.Formalities;
 using Base.Infrastructure.Database.EntityFramework.Entity;
 using Base.Infrastructure.Database.EntityFramework.Entity.Authentication;
+using Base.Infrastructure.Database.EntityFramework.Entity.Formalities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Base.Infrastructure.Database.EntityFramework.Context;
@@ -17,6 +19,10 @@ public class BaseDbContext :  DbContext
 
     public DbSet<RefreshTokenEntity> RefreshTokens { get; set; }
     
+    public DbSet<CitizenRequestEntity> CitizenRequests { get; set; }
+    
+    public DbSet<RequestTypeEntity> RequestTypes { get; set; }
+    
     public BaseDbContext(DbContextOptions<BaseDbContext> options) : base(options) {}
     
     protected override void OnModelCreating(ModelBuilder builder)
@@ -25,6 +31,9 @@ public class BaseDbContext :  DbContext
         builder.ApplyConfiguration(new RoleConfiguration());
         builder.ApplyConfiguration(new UserRoleConfiguration());
         builder.ApplyConfiguration(new RefreshTokenConfiguration());
+
+        builder.ApplyConfiguration(new CitizenRequestConfiguration());
+        builder.ApplyConfiguration(new RequestTypeConfiguration());
         base.OnModelCreating(builder);
     }
 

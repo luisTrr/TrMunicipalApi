@@ -237,6 +237,131 @@ namespace Base.Infrastructure.Database.EntityFramework.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Base.Infrastructure.Database.EntityFramework.Entity.Formalities.CitizenRequestEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CitizenName")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)")
+                        .HasColumnName("citizenName");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("createdAt");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("createdBy");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("isDeleted");
+
+                    b.Property<int>("LastModifiedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("lastModifiedBy");
+
+                    b.Property<DateTime>("LastModifiedByAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("lastModifiedByAt");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("int")
+                        .HasColumnName("priority");
+
+                    b.Property<DateTime>("RegisteredAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("registeredAt");
+
+                    b.Property<int>("RequestTypeId")
+                        .HasColumnType("int")
+                        .HasColumnName("requestTypeId");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int")
+                        .HasColumnName("status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("Priority");
+
+                    b.HasIndex("RequestTypeId");
+
+                    b.HasIndex("Status");
+
+                    b.ToTable("CitizenRequest", "CIT", t =>
+                        {
+                            t.HasComment("Solicitudes y trámites realizados por los ciudadanos.");
+                        });
+                });
+
+            modelBuilder.Entity("Base.Infrastructure.Database.EntityFramework.Entity.Formalities.RequestTypeEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("createdAt");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("createdBy");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("isActive");
+
+                    b.Property<int>("LastModifiedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("lastModifiedBy");
+
+                    b.Property<DateTime>("LastModifiedByAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("lastModifiedByAt");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)")
+                        .HasColumnName("name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("RequestType", "CIT", t =>
+                        {
+                            t.HasComment("Tipos de trámites ciudadanos.");
+                        });
+                });
+
             modelBuilder.Entity("Base.Infrastructure.Database.EntityFramework.Entity.TestTableEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -321,6 +446,17 @@ namespace Base.Infrastructure.Database.EntityFramework.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Base.Infrastructure.Database.EntityFramework.Entity.Formalities.CitizenRequestEntity", b =>
+                {
+                    b.HasOne("Base.Infrastructure.Database.EntityFramework.Entity.Formalities.RequestTypeEntity", "RequestType")
+                        .WithMany("CitizenRequests")
+                        .HasForeignKey("RequestTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("RequestType");
+                });
+
             modelBuilder.Entity("Base.Infrastructure.Database.EntityFramework.Entity.Authentication.RoleEntity", b =>
                 {
                     b.Navigation("UserRoles");
@@ -331,6 +467,11 @@ namespace Base.Infrastructure.Database.EntityFramework.Migrations
                     b.Navigation("RefreshTokens");
 
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("Base.Infrastructure.Database.EntityFramework.Entity.Formalities.RequestTypeEntity", b =>
+                {
+                    b.Navigation("CitizenRequests");
                 });
 #pragma warning restore 612, 618
         }

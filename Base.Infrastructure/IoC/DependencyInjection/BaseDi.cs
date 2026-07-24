@@ -1,10 +1,13 @@
 ﻿using Base.Aplication.Services;
 using Base.Aplication.Services.Authentication;
+using Base.Aplication.Services.Formalities;
 using Base.Domain.Repositories;
 using Base.Domain.Repositories.Authentication;
+using Base.Domain.Repositories.Formalities;
 using Base.Infrastructure.Database.EntityFramework.Context;
 using Base.Infrastructure.Database.EntityFramework.Repositories;
 using Base.Infrastructure.Database.EntityFramework.Repositories.Authentication;
+using Base.Infrastructure.Database.EntityFramework.Repositories.Formalities;
 using Base.Infrastructure.Database.EntityFramework.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -59,6 +62,8 @@ public static class BaseDi
         
         collection.Configure<JwtSettings>(configuration.GetSection("Jwt"));
 
+        collection.AddTransient<CitizenRequestService>();
+
         return collection;
     }
     public static IServiceCollection RegisterRepositories(this IServiceCollection collection)
@@ -68,6 +73,9 @@ public static class BaseDi
         collection.AddTransient<IRoleRepository, RoleRepository>();
         collection.AddTransient<IUserRoleRepository, UserRoleRepository>();
         collection.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
+
+        collection.AddTransient<ICitizenRequestRepository, CitizenRequestRepository>();
+        collection.AddTransient<IRequestTypeRepository, RequestTypeRepository>();
         return collection;
     }
 }

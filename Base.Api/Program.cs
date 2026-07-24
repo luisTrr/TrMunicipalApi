@@ -1,4 +1,5 @@
 using Base.Api.EndPoints.Authentication;
+using Base.Api.EndPoints.Formalities;
 using Base.Api.EndPoints.Test;
 using Base.Api.Middlewares;
 using Base.Infrastructure.IoC.DependencyInjection;
@@ -69,6 +70,7 @@ app.UseGlobalExceptionMiddleware();
 
 // app.MapTestEndpoints();
 app.MapAuthEndpoints();
+app.MapCitizenRequestEndpoints();
 app.Run();
 
 // record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

@@ -1,0 +1,44 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.base_1.iml
+# Ignored default folder with query files
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+## --- .NET / C# (Compilación y Binarios) ---
+[Bb]in/
+[Oo]bj/
+[L33t]/
+[Aa]rtifacts/
+*.user
+*.userossc
+*.sln.docstates
+
+## --- Archivos temporales y de depuración ---
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+*.pdb
+*.cache
+
+## --- JetBrains Rider / IntelliJ ---
+.idea/
+*.sln.iml
+
+
+## --- Visual Studio (Por si alguien del equipo lo usa) ---
+.vs/
+*.user
+*.aps
+*.ncb
+*.suo
