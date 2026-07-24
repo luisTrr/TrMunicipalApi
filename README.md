@@ -83,7 +83,7 @@ Aquí se conectan:
 ## 📌 Responsabilidad
 Exponer endpoints HTTP.
 
-Este proyecto utiliza **Minimal API**, una forma simplificada de crear APIs en .NET 8 sin necesidad de Controllers tradicionales.
+Este proyecto utiliza **Minimal API**, una forma simplificada de crear APIs en .NET 8 sin necesidad de Controllers tradicionales, documentacion en swagger.
 
 ### Ejemplo:
 
