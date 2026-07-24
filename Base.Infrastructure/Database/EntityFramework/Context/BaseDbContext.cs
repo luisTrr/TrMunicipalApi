@@ -1,4 +1,6 @@
-﻿using Base.Infrastructure.Database.EntityFramework.Entity;
+﻿using Base.Infrastructure.Database.EntityFramework.Context.Authentication;
+using Base.Infrastructure.Database.EntityFramework.Entity;
+using Base.Infrastructure.Database.EntityFramework.Entity.Authentication;
 using Microsoft.EntityFrameworkCore;
 
 namespace Base.Infrastructure.Database.EntityFramework.Context;
@@ -7,10 +9,22 @@ public class BaseDbContext :  DbContext
 {
     public DbSet<TestTableEntity>  TestTable { get; set; }
     
+    public DbSet<UserEntity> Users { get; set; }
+
+    public DbSet<RoleEntity> Roles { get; set; }
+
+    public DbSet<UserRoleEntity> UserRoles { get; set; }
+
+    public DbSet<RefreshTokenEntity> RefreshTokens { get; set; }
+    
     public BaseDbContext(DbContextOptions<BaseDbContext> options) : base(options) {}
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.ApplyConfiguration(new UserConfiguration());
+        builder.ApplyConfiguration(new RoleConfiguration());
+        builder.ApplyConfiguration(new UserRoleConfiguration());
+        builder.ApplyConfiguration(new RefreshTokenConfiguration());
         base.OnModelCreating(builder);
     }
 

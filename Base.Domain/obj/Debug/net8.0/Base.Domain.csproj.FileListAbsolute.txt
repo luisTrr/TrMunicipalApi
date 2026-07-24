@@ -10,3 +10,15 @@ C:\Test\base_1\Base.Domain\obj\Debug\net8.0\refint\Base.Domain.dll
 C:\Test\base_1\Base.Domain\obj\Debug\net8.0\Base.Domain.pdb
 C:\Test\base_1\Base.Domain\obj\Debug\net8.0\ref\Base.Domain.dll
 C:\Test\base_1\Base.Domain\obj\Debug\net8.0\Base.Domain.sourcelink.json
+C:\Test\TrMunicipalApi\Base.Domain\bin\Debug\net8.0\Base.Domain.deps.json
+C:\Test\TrMunicipalApi\Base.Domain\bin\Debug\net8.0\Base.Domain.dll
+C:\Test\TrMunicipalApi\Base.Domain\bin\Debug\net8.0\Base.Domain.pdb
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.AssemblyInfoInputs.cache
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.AssemblyInfo.cs
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.csproj.CoreCompileInputs.cache
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.sourcelink.json
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.dll
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\refint\Base.Domain.dll
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\Base.Domain.pdb
+C:\Test\TrMunicipalApi\Base.Domain\obj\Debug\net8.0\ref\Base.Domain.dll

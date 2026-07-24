@@ -1,7 +1,10 @@
 ﻿using Base.Aplication.Services;
+using Base.Aplication.Services.Authentication;
 using Base.Domain.Repositories;
+using Base.Domain.Repositories.Authentication;
 using Base.Infrastructure.Database.EntityFramework.Context;
 using Base.Infrastructure.Database.EntityFramework.Repositories;
+using Base.Infrastructure.Database.EntityFramework.Repositories.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,11 +52,18 @@ public static class BaseDi
     public static IServiceCollection RegisterServices(this IServiceCollection collection)
     {
         collection.AddTransient<TestTableService>();
+        collection.AddTransient<AuthService>();
+        collection.AddTransient<IPasswordHasher, PasswordHasher>();
+        collection.AddTransient<ITokenService, JwtTokenService>();
         return collection;
     }
     public static IServiceCollection RegisterRepositories(this IServiceCollection collection)
     {
         collection.AddTransient<ITestTableRepository, TestTableRepository>();
+        collection.AddTransient<IUserRepository, UserRepository>();
+        collection.AddTransient<IRoleRepository, RoleRepository>();
+        collection.AddTransient<IUserRoleRepository, UserRoleRepository>();
+        collection.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
         return collection;
     }
 }
